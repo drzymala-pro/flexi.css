@@ -1,34 +1,33 @@
-
-/* Stretch the html tag over the full space available */
+/* Stretch the html over the full space available */
 html {
     width: 100%;
     height: 100%;
 }
 
-/* Display children of a "row" class in a flex row */
-.row {
+/* Display children as columns in a row */
+.flexi-columns {
     display: flex;
     flex-direction: row;
 }
 
-/* Display children of a "column" class in a flex column */
-.column {
+/* Display children as rows in a column */
+.flexi-rows {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-/* Prevent shrinking of "row" and "column" children */
-.row > *,
-.column > *
+/* Prevent shrinking of children */
+.flexi-columns > *,
+.flexi-rows > *
 {
     flex-grow: 0;
     flex-shrink: 0;
 }
 
-/* Make the "expanding" class take all space available */
-.row > .expanding,
-.column > .expanding
+/* Make the "flexi-expand" class take all space available */
+.flexi-columns > .flexi-expand,
+.flexi-rows > .flexi-expand
 {
     flex-grow: 1;
 }
@@ -39,6 +38,6 @@ html {
     /* Align everything to the center */
     * { text-align: center; }
     /* rows become columns */
-    .row { flex-direction: column; }
+    .flexi-columns { flex-direction: column; }
 }
 
